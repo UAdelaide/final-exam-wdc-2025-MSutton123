@@ -4,7 +4,7 @@ var db = require('../db');
 
 // GET request for /api/dogs
 router.get('/dogs', async (req, res) => {
-    // try the query to get the dog name, size and owner username from Dogs table
+    // try the query to get the dog name, size and owner username from database
     try {
         const [rows] = await db.query(`
         SELECT d.name AS dog_name, d.size, u.username AS owner_username
@@ -20,7 +20,7 @@ router.get('/dogs', async (req, res) => {
 // GET request for api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
     // try the query to get the request id, dog name, requested time, duration, location and
-    // username from 
+    // username from database
     try {
         const [rows] = await db.query(`
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
