@@ -71,7 +71,7 @@
             this.user = data.user_id;
             return data.user_id;
 
-          } catch (err) {
+          } catch (err) { // if try failed
             error.value = err.message;
           }
         }
