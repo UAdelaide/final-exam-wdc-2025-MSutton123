@@ -4,13 +4,14 @@ var db = require('../db');
 
 // GET request for /api/dogs
 router.get('/dogs', async (req, res) => {
-    try { // try the query to get the dog name, size and owner username from Dogs table
+    // try the query to get the dog name, size and owner username from Dogs table
+    try {
         const [rows] = await db.query(`
         SELECT d.name AS dog_name, d.size, u.username AS owner_username
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
     `);
-        res.json(rows);
+        res.json(rows); // 
     } catch (error) {
         res.status(500).send("/api/dogs request failed. " + error);
     }
