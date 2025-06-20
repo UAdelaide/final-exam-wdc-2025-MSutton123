@@ -21,8 +21,7 @@ app.use(session({
     secret: 'secret-key',
     resave: false,
     cookie: {
-        httpOnly: true,
-        maxAge: 1000 * 60 * 60
+        secure: false
     }
 }));
 
