@@ -12,8 +12,8 @@
 <body class="bg-light">
 
   <div id="app" class="container py-5">
-    <form @submit.prevent="login">
-      <h1 class="mb-4 text-primary">{{ message }}</h1>
+    <h1 class="mb-4 text-primary">{{ message }}</h1>
+    <form v-on:submit="login">
       <label for="username">Username</label>
       <input type="text" id="username" v-model="username" requied>
       <label for="password">Password</label>
