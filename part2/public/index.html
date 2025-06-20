@@ -12,7 +12,7 @@
 <body class="bg-light">
 
   <div id="app" class="container py-5">
-    <form v-on:submit="login">
+    <form @submit="login">
       <h1 class="mb-4 text-primary">{{ message }}</h1>
       <label for="username">Username</label>
       <input type="text" id="username" v-model="username" requied>
