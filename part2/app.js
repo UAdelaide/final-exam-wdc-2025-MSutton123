@@ -37,9 +37,9 @@ app.get('/api/dogs', async (req, res) => {
     FROM Dogs
   `);
     res.json(rows);
-    } catch (error) {
-    res.
-}
+    } catch (err) {
+        res.json({ error: err });
+    }
 });
 
 // Export the app instead of listening here
