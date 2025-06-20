@@ -15,9 +15,9 @@
     <form v-on:submit="login">
       <h1 class="mb-4 text-primary">{{ message }}</h1>
       <label for="username">Username</label>
-      <input type="text" name="uname" id="username" v-model="username" requied>
+      <input type="text" id="username" v-model="username" requied>
       <label for="password">Password</label>
-      <input type="password" name="passw" id="password" v-model="password" required><br>
+      <input type="password" id="password" v-model="password" required><br>
       <button type="submit">Log in</button>
     </form>
 
