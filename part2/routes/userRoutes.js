@@ -85,5 +85,6 @@ router.get('/choosedog', async (req,res) => {
 });
 
 // GET alldogs
+router.get('/alldogs', async);
 
 module.exports = router;
