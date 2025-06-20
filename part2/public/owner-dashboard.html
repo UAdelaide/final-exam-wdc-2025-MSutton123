@@ -75,7 +75,8 @@
         }
       },
       async mounted() {
-        const dogs = await fetch('/');
+        const dogs = await fetch('/api/users/choosedog');
+        this owned_dogs =dogs
       },
       setup() {
         const form = ref({
