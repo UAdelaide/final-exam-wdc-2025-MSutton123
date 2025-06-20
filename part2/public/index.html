@@ -64,7 +64,7 @@
             const response = await fetch ('api/users/me', {credentials: 'include', cache: 'no-store'});
 
             if (response.ok) {
-              const data = 
+              const data = response.json();
             }
           } catch {
 
