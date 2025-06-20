@@ -114,7 +114,7 @@
                 };
             },
             async mounted() {
-                try {
+                try { 
                     const link = await fetch('https://dog.ceo/api/breeds/image/random');
                     var infoJSON = await link.json();
                     this.imageLink = infoJSON.message;
