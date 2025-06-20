@@ -57,7 +57,9 @@
               this.error = data.error
             }
 
-            
+            if (data.user.role === 'walker') {
+              
+            }
 
                     } catch (err) {
             this.error = "log in did not work. Error: " + err;
