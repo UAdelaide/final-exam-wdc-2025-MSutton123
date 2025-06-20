@@ -80,7 +80,7 @@ router.post('/choosedog', async (req,res) => {
   const [rows] = db.query(`
     SELECT d.name
     FROM Dogs d
-    JOIN Users u ON u.user_id`);
+    JOIN Users u ON u.user_id = d.dog_id`);
 });
 
 module.exports = router;
