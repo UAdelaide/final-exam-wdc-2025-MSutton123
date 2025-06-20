@@ -41,11 +41,11 @@
       methods: {
         async login() {
           const user = document.getElementById("uInput");
-          const pass = document.getElementById("pName");
+          const pass = document.getElementById("pInput");
           await fetch('/api/users/login', {
             method: 'POST',
             headers: { 'content-type': 'application.json' },
-            body: JSON.stringify({ email:  password: })
+            body: JSON.stringify({ email: user.value password: })
           });
         }
       }
