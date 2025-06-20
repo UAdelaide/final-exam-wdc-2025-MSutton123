@@ -17,9 +17,11 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 app.use(session({
-    secret: '',
+    secret: 'secret-key',
     resave: false,
-    
+    cookie {
+        
+    }
 }));
 
 // Export the app instead of listening here
