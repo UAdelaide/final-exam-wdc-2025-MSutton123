@@ -27,14 +27,14 @@
 
     <h1>All Registered Dogs</h1>
     <table class="table">
-      <tr> <!--  -->
+      <tr> <!-- Write in column titles -->
         <th>Dog ID</th>
         <th>Name</th>
         <th>Size</th>
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <tr v-for="(dog, index) in dog_info" :key="dog.dog_id">
+      <tr v-for="(dog, index) in dog_info" :key="dog.dog_id"> <!-- go through all values in -->
         <td>{{ dog.dog_id }}</td>
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
