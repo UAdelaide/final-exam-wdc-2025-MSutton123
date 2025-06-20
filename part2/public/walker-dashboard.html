@@ -60,7 +60,11 @@
           try {
             // try to fetch the data of the user id from the API
             const response = await fetch('/api/users/me');
+
+            // If the response fails, throw an error
             if (!response.ok) throw new Error(result.error || 'get current user failed');
+
+            // await the json response
             const data = await response.json();
             this.user = data.user_id;
             return data.user_id;
