@@ -54,8 +54,11 @@
             const data = await response.json();
 
             if (!response.ok) {
-              
+              this.error = data.error
             }
+
+            
+
                     } catch (err) {
             this.error = "log in did not work. Error: " + err;
           }
