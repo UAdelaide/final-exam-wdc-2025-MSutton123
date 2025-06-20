@@ -40,6 +40,7 @@
       },
       methods: {
         async login() {
+          console.log("here")
           try {
             const response = await fetch('/api/users/login', {
               method: 'POST',
