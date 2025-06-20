@@ -66,7 +66,6 @@ router.post('/login', async (req, res) => {
 
 // POST logout
 router.post('/logout',async (req,res) => {
-  
     req.session.user = {
                     user_id: first_row.user_id,
                     username: first_row.username,
