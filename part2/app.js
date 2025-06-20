@@ -31,11 +31,15 @@ app.use('/api/users', userRoutes);
 
 // GET dogs
 app.get('/api/dogs', async (req, res) => {
+    try {
     const [rows] = await db.query(`
     SELECT dog_id, name, size, owner_id
     FROM Dogs
   `);
     res.json(rows);
+    } catch (error) {
+        console.
+    }
 });
 
 // Export the app instead of listening here
