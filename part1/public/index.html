@@ -10,7 +10,7 @@
 <body>
     <div id='#app'>
         <h1>Dog of the Day</h1>
-        <p v-if="imageLink" alt="A random dog">{{ imageLink }}</p>
+        <p  alt="A random dog">{{ imageLink }}</p>
     </div>
     <script>
         const { createApp } = Vue;
@@ -30,7 +30,7 @@
                 }
             },
             render() {
-                
+
             }
         }).mount('#app');
     </script>
