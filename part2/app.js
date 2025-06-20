@@ -19,7 +19,8 @@ app.use('/api/users', userRoutes);
 app.use(session({
     secret: 'secret-key',
     resave: false,
-    cookie {
+    cookie: {
+        httpOnly: true,
         
     }
 }));
