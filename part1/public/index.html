@@ -100,9 +100,11 @@
 
         // Button functionality
         var count = 0;
+        var num2increase = document.getElementById("clickCount");
+
         function increaseNum() {
-            var num2increase = document.getElementById("clickCount");
-            num2increase.innerText = num2increase.innerText + 1;
+            count = count + 1;
+            num2increase.innerText = count;
         }
     </script>
 </body>
