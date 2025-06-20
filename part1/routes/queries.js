@@ -31,7 +31,7 @@ router.get('/walkers/summary', async (req, res) => {
         FROM Users u
         JOIN WalkRatings rate ON u.user_id = rate.walker_id
         JOIN WalkRequests requests ON rate.request_id = requests.request_id
-        WHERE u.role = 'walker' AND 
+        WHERE u.role = 'walker' AND requests.status = 'completed'
     `);
     res.json(rows);
 });
