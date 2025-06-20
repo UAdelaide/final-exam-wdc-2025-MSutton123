@@ -75,7 +75,7 @@
             It is a very beautiful picture of a dog which we all like to see a lot.
             It makes me very happy to see the picture of the dog of the day.</p>
         <img v-if="imageLink" :src="imageLink" alt="Random dog" /><br>
-        <button type="button" id="button">CLICK this</button>
+        <button type="button" id="button4count">CLICK this</button>
         <h2 id="clickCount">0</h2>
     </div>
     <script>
@@ -101,11 +101,13 @@
         // Button functionality
         var count = 0;
         var num2increase = document.getElementById("clickCount");
-
         function increaseNum() {
             count = count + 1;
             num2increase.innerText = count;
         }
+
+        var b = document.getElementById("button4count");
+
     </script>
 </body>
 
