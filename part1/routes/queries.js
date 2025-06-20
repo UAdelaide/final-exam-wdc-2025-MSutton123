@@ -5,6 +5,6 @@ var db = require('../db');
 // /dogs GET request
 router.get('/dogs', async (req, res) => {
     const [rows] = await db.query(`
-        SELECT name AS dog_name, size, 
+        SELECT d.name AS dog_name, d.size, 
     `);
 });
