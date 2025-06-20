@@ -1,3 +1,4 @@
 var express = require('express');
 var router = express.router();
-var db = require()
+var db = require('../db');
+
