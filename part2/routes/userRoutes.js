@@ -55,11 +55,11 @@ router.post('/login', async (req, res) => {
     // inputted data
     var first_row = rows[0];
     req.session.user = {
-                    user_id: first_row.user_id,
-                    username: first_row.username,
-                    email: first_row.email,
-                    role: first_row.role
-                  };
+      user_id: first_row.user_id,
+      username: first_row.username,
+      email: first_row.email,
+      role: first_row.role
+    };
 
     // send message that login was successful and send data from the query
     res.json({ message: 'Login successful', user: rows[0] });
@@ -69,26 +69,26 @@ router.post('/login', async (req, res) => {
 });
 
 // POST logout request
-router.post('/logout',async (req,res) => {
+router.post('/logout', async (req, res) => {
   // destroy the session to end it
-    req.session.destroy((error) => {
-      if (error) { // if it could not be ended
-        res.status(500).send('error logging out');
-      } else {
-        res.clearCookie('connect.sid'); // clear related cookies
-        res.json({ message: "logged out" }); // send message of successful logout
-      }
-    });
+  req.session.destroy((error) => {
+    if (error) { // if it could not be ended
+      res.status(500).send('error logging out');
+    } else {
+      res.clearCookie('connect.sid'); // clear related cookies
+      res.json({ message: "logged out" }); // send message of successful logout
+    }
+  });
 });
 
 // GET choosedog request
-router.get('/choosedog', async (req,res) => {
+router.get('/choosedog', async (req, res) => {
   // make a database query based on the owner id from the session
   try {
-  const [rows] = await db.query(`
+    const [rows] = await db.query(`
     SELECT name, dog_id
     FROM Dogs
-    WHERE owner_id = ?`,[req.session.user.user_id]);
+    WHERE owner_id = ?`, [req.session.user.user_id]);
     res.json(rows); // send through json
   } catch (err) { // if try fails
     res.json({ error: err });
