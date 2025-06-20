@@ -68,7 +68,8 @@
             // call a respective image link for each dog
             const links = [];
             for (key in this.dog_info) { // for all values in the dogs database
-              const link = await fetch('https://dog.ceo/api/breeds/image/random'); // fetch a
+              // fetch a link
+              const link = await fetch('https://dog.ceo/api/breeds/image/random');
               var infoJSON = await link.json();
               links.push(infoJSON.message);
             }
