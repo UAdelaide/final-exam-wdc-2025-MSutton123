@@ -4,7 +4,7 @@ var db = require('../db');
 
 // GET request for /api/dogs
 router.get('/dogs', async (req, res) => {
-    try {
+    try { // try the query
         const [rows] = await db.query(`
         SELECT d.name AS dog_name, d.size, u.username AS owner_username
         FROM Dogs d
