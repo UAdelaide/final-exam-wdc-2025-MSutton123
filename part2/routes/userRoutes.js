@@ -64,8 +64,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST logout
-router.post('/logout',async (req,res) => {
+// GET logout
+router.get('/logout',async (req,res) => {
     req.session.destroy();
 
     res.json({ message: 'Login successful', user: rows[0] });
