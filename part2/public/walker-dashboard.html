@@ -59,7 +59,6 @@
         async function applyToWalk(requestId) {
           try {
             const res = await fetch('/api/users/me');
-
             if (!res.ok) throw new Error(result.error || 'Application failed');
             message.value = result.message;
             error.value = '';
