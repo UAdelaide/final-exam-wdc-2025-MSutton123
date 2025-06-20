@@ -40,12 +40,12 @@
       },
       methods: {
         async login() {
-          this.username = document.getElementById("uInput");
-          const pass = document.getElementById("pInput");
+          this.username = document.getElementById("uInput").value;
+          this.password = document.getElementById("pInput").value;
           await fetch('/api/users/login', {
             method: 'POST',
             headers: { 'content-type': 'application.json' },
-            body: JSON.stringify({ email: user.value, password: pass.value })
+            body: JSON.stringify({ email: user.value, password: this.password })
           });
         }
       }
