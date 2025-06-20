@@ -30,12 +30,12 @@ app.use('/api/users', userRoutes);
 const db = require('../models/db');
 
 // GET alldogs
-app.get('/api/dogs', async (req,res) => {
-  const [rows] = await db.query(`
+require('express').Router().get('/api/dogs', async (req, res) => {
+    const [rows] = await db.query(`
     SELECT dog_id, name, size, owner_id
     FROM Dogs
   `);
-  res.json(rows);
+    res.json(rows);
 });
 
 // Export the app instead of listening here
