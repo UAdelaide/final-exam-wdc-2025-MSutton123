@@ -66,8 +66,11 @@
 
             // await the json response
             const data = await response.json();
+
+            // over write predfined vue user value
             this.user = data.user_id;
             return data.user_id;
+
           } catch (err) {
             error.value = err.message;
           }
