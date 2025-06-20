@@ -58,6 +58,7 @@
 
         async function getCurrentUser() {
           try {
+            // try to fetch the data of the user id from the API
             const response = await fetch('/api/users/me');
             if (!response.ok) throw new Error(result.error || 'get current user failed');
             const data = await response.json();
