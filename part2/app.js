@@ -26,6 +26,9 @@ app.use(session({
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+
+const db = require('../models/db');
+
 // GET alldogs
 app.get('/api/dogs', async (req,res) => {
   const [rows] = await db.query(`
