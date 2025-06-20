@@ -60,8 +60,8 @@
       },
       async mounted() {
         try {
-            const response = await fetch('/api/dogs');
-            if (!response.ok) throw new Error(result.error || 'get current user failed');
+            const response = await fetch('/api/dogs'); // fetch data from /api/dogs
+            if (!response.ok) throw new Error(result.error || 'get current user failed'); // 
             this.dog_info = await response.json();
 
             const links = []
