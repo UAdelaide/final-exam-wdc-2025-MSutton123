@@ -34,7 +34,8 @@
         return {
           message: 'Welcome to the Dog Walking Service!',
           username: '',
-          password: ''
+          password: '',
+          error: ''
         };
       },
       async mounted() {
@@ -42,6 +43,7 @@
       },
       methods: {
         async login() {
+          this.err
           try {
             this.username = document.getElementById("uInput").value;
             this.password = document.getElementById("pInput").value;
