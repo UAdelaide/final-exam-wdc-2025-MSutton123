@@ -50,7 +50,7 @@
             const response = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'content-type': 'application.json' },
-              body: JSON.stringify({ email: this.username, password: this.password })
+              body: JSON.stringify({ username: this.username, password: this.password })
             });
 
             const data = response.json();
