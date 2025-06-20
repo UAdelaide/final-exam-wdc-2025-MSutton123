@@ -16,7 +16,7 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
-    <!--login form-->
+    <!--login form calling the login function using vue.js-->
     <form v-on:submit.prevent="login">
       <label for="username">Username</label><br>
       <input type="text" id="username" v-model="username" required><br>
