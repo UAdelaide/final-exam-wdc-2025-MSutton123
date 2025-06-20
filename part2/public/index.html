@@ -89,8 +89,9 @@
             // convert the reponse to json
             const data = await response.json();
 
+            // if the response fails
             if (!response.ok) {
-              this.error = data.error;
+              this.error = data.error; // set error
               return;
             }
 
