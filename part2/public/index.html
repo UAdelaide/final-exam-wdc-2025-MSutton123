@@ -70,7 +70,7 @@
               var infoJSON = await link.json();
               links.push(infoJSON.message);
             }
-            this
+            this.imageLinks = links;
 
           } catch (err) {
             error.value = err.message;
