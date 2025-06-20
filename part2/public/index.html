@@ -35,7 +35,8 @@
           username: '',
           password: '',
           error: '',
-          dog
+          dog_info: null,
+
         };
       },
       async mounted() {
@@ -43,6 +44,7 @@
             const response = await fetch('/api/users/alldogs');
             if (!response.ok) throw new Error(result.error || 'get current user failed');
             const data = await response.json();
+            this.dog_info = 
           } catch (err) {
             error.value = err.message;
           }
