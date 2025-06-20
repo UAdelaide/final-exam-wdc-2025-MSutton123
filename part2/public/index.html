@@ -44,8 +44,6 @@
       methods: {
         async login() {
           try {
-            this.username = document.getElementById("uInput").value;
-            this.password = document.getElementById("pInput").value;
 
             const response = await fetch('/api/users/login', {
               method: 'POST',
