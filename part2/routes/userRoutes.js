@@ -90,7 +90,9 @@ router.get('/choosedog', async (req,res) => {
     FROM Dogs
     WHERE owner_id = ?`,[req.session.user.user_id]);
     res.json(rows); // send through json
-    
+  } catch (err) { // if try fails
+    res.json({ error: err });
+  }
 });
 
 module.exports = router;
