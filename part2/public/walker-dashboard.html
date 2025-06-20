@@ -61,12 +61,13 @@
             const res = await fetch('/api/users/me');
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
-          //   message.value = result.message;
-          //   error.value = '';
-          //   await loadWalkRequests();
-          // } catch (err) {
-          //   error.value = err.message;
-          //   message.value = '';
+            message.value = result.message;
+            error.value = '';
+            await loadWalkRequests();
+          } catch (err) {
+            error.value = err.message;
+            message.value = '';
+          }
           // try {
           //   const res = await fetch(`/api/walks/${requestId}/apply`, {
           //     method: 'POST',
