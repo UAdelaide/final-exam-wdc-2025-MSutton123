@@ -80,7 +80,7 @@
       async mounted() {
         // call the API to get the user's list of dogs
         const dogs = await fetch('/api/users/choosedog');
-        
+        // make into json
         this.owned_dogs = await dogs.json();
       },
       setup() {
