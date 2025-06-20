@@ -12,7 +12,7 @@ router.get('/dogs', async (req, res) => {
     `);
     res.json(rows);
     } catch (error) {
-        res.status(501).send("/dogs request failed. "+error);
+        res.status(501).send("/api/dogs request failed. "+error);
     }
 });
 
@@ -27,6 +27,9 @@ router.get('/walkrequests/open', async (req, res) => {
         WHERE wr.status = 'open'
     `);
     res.json(rows);
+} catch (error) {
+    res.status(501).send("/api/walkrequests/open request failed. "+error);
+}
 });
 
 // GET requests for /walkers/summary
