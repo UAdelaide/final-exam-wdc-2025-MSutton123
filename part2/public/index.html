@@ -54,6 +54,7 @@
 
             const data = response.json();
           } catch (error) {
+            throw error
           }
         },
         async walkerOwner() {
