@@ -10,6 +10,7 @@
 <body>
     <div id='app'>
         <h1>Dog of the Day</h1>
+        <img src="{{ imageLink }}">
         <p v-if="imageLink">{{ imageLink }}</p>
     </div>
     <script>
@@ -23,7 +24,6 @@
             async mounted() {
                 try {
                 const link = await fetch('https://dog.ceo/api/breeds/image/random');
-                console.log(link);
                 var infoJSON = await link.json();
                 this.imageLink = infoJSON.message;
                 } catch (err) {
