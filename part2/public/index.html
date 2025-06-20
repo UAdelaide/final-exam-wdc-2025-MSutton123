@@ -61,7 +61,7 @@
         },
         async walkerOwner() {
           try {
-            const response = await fetch ('api/users/me', {credentials: 'include', cache: ''})
+            const response = await fetch ('api/users/me', {credentials: 'include', cache: 'no-store'});
           } catch {
 
           }
