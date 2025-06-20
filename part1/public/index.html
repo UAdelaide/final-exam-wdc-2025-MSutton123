@@ -35,7 +35,6 @@
             0% {left: 0px; top: 0px;}
             50% {left: 800px; top: 0px;}
             100% {left: 0px; top: 0px;}
-
         }
     </style>
 </head>
@@ -48,7 +47,7 @@
             It makes me very happy to see the picture of the dog of the day.</p>
         <img v-if="imageLink" :src="imageLink" alt="Random dog" />
         <button type="button" @click="">CLICK this</button>
-        <h1 id="">0</h1>
+        <h1 id="clickCount">0</h1>
     </div>
     <script>
         const { createApp } = Vue;
