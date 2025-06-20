@@ -32,11 +32,11 @@ app.use('/api/users', userRoutes);
 // GET dogs
 app.get('/api/dogs', async (req, res) => {
     try {
-    const [rows] = await db.query(`
-    SELECT dog_id, name, size, owner_id
-    FROM Dogs
-  `);
-    res.json(rows);
+        const [rows] = await db.query(`
+        SELECT dog_id, name, size, owner_id
+        FROM Dogs
+        `);
+        res.json(rows); // send through json
     } catch (err) {
         res.json({ error: err });
     }
