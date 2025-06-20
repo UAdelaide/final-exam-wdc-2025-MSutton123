@@ -21,9 +21,13 @@
                 };
             },
             async mounted() {
+                try {
                 const link = await fetch('https://dog.ceo/api/breeds/image/random');
                 this.infoJSON = await link.json();
                 this.imageLink = infoJSON.message;
+                } catch (err) {
+                    console.error("error getting dog", )
+                }
             }
         }).mount('#app');
     </script>
