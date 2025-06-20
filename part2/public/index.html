@@ -56,8 +56,8 @@
             const data = await response.json();
 
             walerOwner();
-          } catch (error) {
-            throw error;
+          } catch (err) {
+            this.error = "log in did not work. Error: " + err;
           }
         }
     }).mount('#app');
