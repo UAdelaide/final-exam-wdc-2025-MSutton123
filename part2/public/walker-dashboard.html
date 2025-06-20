@@ -78,7 +78,7 @@
         async function logout() {
           const response = await fetch('/api/users/logout', {
               method: 'POST',
-              credentials: 'include';
+              credentials: 'include'
             });
 
           window.location.href = 'index.html';
