@@ -78,10 +78,9 @@ router.post('/logout',async (req,res) => {
 // GET choosedog
 router.get('/choosedog', async (req,res) => {
   const [rows] = db.query(`
-    SELECT d.name, d.dog_id
-    FROM Dogs d
-    JOIN Users u ON u.user_id = d.dog_id
-    WHERE u.user_id = ?`,[req.session.user.user_id]);
+    SELECT name, dog_id
+    FROM Dogs
+    WHERE owner_id = ?`,[req.session.user.user_id]);
     res.json(rows);
 });
 
