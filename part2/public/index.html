@@ -34,12 +34,12 @@
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <tr v-for="(dog, index) in dog_info">
+      <tr v-for="dog in dog_info">
         <td>{{ dog.dog_id }}</td>
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img v-if="imageLink[index]" :src="imageLink[index]" alt="Random dog" /></td>
+        <td><img src="imageLink[index]" alt="Random dog" /></td>
       </tr>
     </table>
 
