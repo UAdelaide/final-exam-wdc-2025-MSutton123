@@ -34,6 +34,7 @@ router.get('/walkrequests/open', async (req, res) => {
 
 // GET requests for /walkers/summary
 router.get('/walkers/summary', async (req, res) => {
+    try {
     const [rows] = await db.query(`
         SELECT u.username AS walker_username,
             COUNT(rate.rating_id) AS total_ratings,
@@ -49,6 +50,9 @@ router.get('/walkers/summary', async (req, res) => {
         GROUP BY u.username
     `);
     res.json(rows);
+} catch (error) {
+    res.status(500).send("/api/ request failed. "+error);
+}
 });
 
 module.exports = router;
