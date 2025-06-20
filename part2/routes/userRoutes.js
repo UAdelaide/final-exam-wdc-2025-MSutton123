@@ -69,6 +69,7 @@ router.post('/logout',async (req,res) => {
       if (error) {
         res.status(500).send('error logging out');
       } else {
+        res.clearCookie('')
         res.send("logged out");
       }
     });
