@@ -8,14 +8,14 @@
     <style>
         body {
             background-image:
-                linear-gradient(217deg, rgb(21, 255, 0), rgba(255,0,0,0) 30%),
-                linear-gradient(115deg, rgb(255, 247, 0), rgba(0,255,0,0) 70.71%),
-                linear-gradient(343deg, rgb(255, 0, 0), rgba(0,0,255,0) 70.71%),
-                linear-gradient(343deg, rgb(255, 0, 247), rgba(0,0,0,241) 76.5%);
+                linear-gradient(217deg, rgb(21, 255, 0), rgba(255, 0, 0, 0) 30%),
+                linear-gradient(115deg, rgb(255, 247, 0), rgba(0, 255, 0, 0) 70.71%),
+                linear-gradient(343deg, rgb(255, 0, 0), rgba(0, 0, 255, 0) 70.71%),
+                linear-gradient(343deg, rgb(255, 0, 247), rgba(0, 0, 0, 241) 76.5%);
         }
 
         h1 {
-            color:rgb(255, 0, 136);
+            color: rgb(255, 0, 136);
             font-size: 70px;
         }
 
@@ -32,10 +32,21 @@
             animation-iteration-count: infinite;
         }
 
-        @keyframes movement{
-            0% {left: 0px; top: 0px;}
-            50% {left: 800px; top: 0px;}
-            100% {left: 0px; top: 0px;}
+        @keyframes movement {
+            0% {
+                left: 0px;
+                top: 0px;
+            }
+
+            50% {
+                left: 800px;
+                top: 0px;
+            }
+
+            100% {
+                left: 0px;
+                top: 0px;
+            }
         }
 
         #clickcount {
@@ -71,9 +82,9 @@
             },
             async mounted() {
                 try {
-                const link = await fetch('https://dog.ceo/api/breeds/image/random');
-                var infoJSON = await link.json();
-                this.imageLink = infoJSON.message;
+                    const link = await fetch('https://dog.ceo/api/breeds/image/random');
+                    var infoJSON = await link.json();
+                    this.imageLink = infoJSON.message;
                 } catch (err) {
                     console.error("error getting dog", err);
                 }
