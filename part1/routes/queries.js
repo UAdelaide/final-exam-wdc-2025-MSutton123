@@ -27,7 +27,7 @@ router.get('/walkrequests/open', async (req, res) => {
 // GET requests for /walkers/summary
 router.get('/walkers/summary', async (req, res) => {
     const [rows] = await db.query(`
-        SELECT u.user_id AS walker_username, AS total_ratings
+        SELECT u.user_id AS walker_username, COUNT() AS total_ratings
         FROM Users s
         WHERE u.role = 'walker'
 
