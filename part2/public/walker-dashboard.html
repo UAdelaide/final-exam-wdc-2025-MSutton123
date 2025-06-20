@@ -108,7 +108,7 @@
             });
               if (response.ok) { // if response worked, load home page
               window.location.href = 'index.html';
-              } else {
+              } else { // otherwise set error
                 this.error = data.error;
                 return;
               }
