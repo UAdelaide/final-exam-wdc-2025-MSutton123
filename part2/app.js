@@ -12,9 +12,6 @@ app.use(express.static(path.join(__dirname, '/public')));
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
-
 var session = require('express-session');
 
 app.use(session({
@@ -25,6 +22,9 @@ app.use(session({
         secure: false
     }
 }));
+
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 module.exports = app;
