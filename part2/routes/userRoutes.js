@@ -81,7 +81,7 @@ router.get('/choosedog', async (req,res) => {
     SELECT d.name
     FROM Dogs d
     JOIN Users u ON u.user_id = d.dog_id
-    WHERE u.user_id = ?`,[]);
+    WHERE u.user_id = ?`,[req.session.user.user_id]);
 });
 
 module.exports = router;
