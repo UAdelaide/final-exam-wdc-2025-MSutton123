@@ -84,4 +84,6 @@ router.get('/choosedog', async (req,res) => {
     res.json(rows);
 });
 
+// GET alldogs
+
 module.exports = router;
