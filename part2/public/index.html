@@ -40,28 +40,30 @@
       },
       methods: {
         async login() {
-          try {
-            const response = await fetch('/api/users/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application.json' },
-              body: JSON.stringify({ username: this.username, password: this.password })
-            });
+          window.location.href = 'walker-dashboard.html'
 
-            const data = await response.json();
+          // try {
+          //   const response = await fetch('/api/users/login', {
+          //     method: 'POST',
+          //     headers: { 'Content-Type': 'application.json' },
+          //     body: JSON.stringify({ username: this.username, password: this.password })
+          //   });
 
-            if (!response.ok) {
-              this.error = data.error
-            }
+          //   const data = await response.json();
 
-            if (data.user.role === 'walker') {
-              window.location.href = 'walker-dashboard.html'
-            } else if (data.user.role === 'owner') {
-              window.location.href = 'owner-dashboard.html'
-            }
+          //   if (!response.ok) {
+          //     this.error = data.error
+          //   }
 
-          } catch (err) {
-            this.error = "log in did not work. Error: " + err;
-          }
+          //   if (data.user.role === 'walker') {
+          //     window.location.href = 'walker-dashboard.html'
+          //   } else if (data.user.role === 'owner') {
+          //     window.location.href = 'owner-dashboard.html'
+          //   }
+
+          // } catch (err) {
+          //   this.error = "log in did not work. Error: " + err;
+          // }
         }
       }
     }).mount('#app');
