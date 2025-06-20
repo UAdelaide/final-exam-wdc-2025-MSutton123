@@ -32,7 +32,7 @@ router.get('/walkrequests/open', async (req, res) => {
     }
 });
 
-// GET request for /walkers/summary
+// GET request for /api/walkers/summary
 router.get('/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
