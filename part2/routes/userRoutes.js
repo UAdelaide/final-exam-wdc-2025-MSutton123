@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
   console.log("here");
-
   const { username, email, password, role } = req.body;
   try {
     const [result] = await db.query(`
