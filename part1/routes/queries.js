@@ -17,7 +17,7 @@ router.get('/walkrequests/open', async (req, res) => {
     const [rows] = await db.query(`
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, rw.duration_minutes, rw.location, u.username AS owner_username
         FROM Dogs d
-        JOIN Users u ON d.owner_id = u.user_id
+        JOIN WalkRquests wr ON rw.
         WHERE wr.status = 'open'
     `);
     res.json(rows);
