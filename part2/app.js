@@ -27,7 +27,7 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 
-const db = require('../models/db');
+const db = require('/models/db');
 
 // GET alldogs
 require('express').Router().get('/api/dogs', async (req, res) => {
