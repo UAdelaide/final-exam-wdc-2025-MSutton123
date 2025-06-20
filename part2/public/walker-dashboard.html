@@ -57,9 +57,11 @@
         }
 
         async function getCurrentUser() {
-          
-          const response = await fetch('/api/users/me');
-
+          try {
+            const response = await fetch('/api/users/me');
+          } catch (err) {
+            
+          }
         }
 
         async function applyToWalk(requestId) {
