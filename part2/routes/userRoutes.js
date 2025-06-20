@@ -59,20 +59,15 @@ router.post('/login', async (req, res) => {
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Login failed' });
   }
 });
 
 // GET logout
 router.get('/logout',async (req,res) => {
-    req.session.destroy();
+    req.session.destroy((error));
 
-    res.json({ message: 'Login successful', user: rows[0] });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Login failed' });
-  }
+
 });
 
 module.exports = router;
