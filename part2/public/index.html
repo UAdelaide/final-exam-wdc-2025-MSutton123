@@ -41,7 +41,8 @@
 
           await fetch('/login', {
             method: 'POST',
-            headers: { "" }
+            headers: { 'content-type': 'application.json' },
+            
           });
         }
       }
