@@ -102,7 +102,7 @@
             It makes me very happy to see the picture of the dog of the day.</p>
         <img v-if="imageLink" :src="imageLink" alt="Random dog" /><br>
         <button type="button" id="button4count">CLICK this</button>
-        <h2 id="clickCount">0</h2> <!---->
+        <h2 id="clickCount">0</h2> <!-- numnber of clicks of moving button-->
     </div>
     <script>
         // Get image link using Vue
@@ -115,8 +115,11 @@
             },
             async mounted() {
                 try {
+                    // fetch data from API
                     const link = await fetch('https://dog.ceo/api/breeds/image/random');
                     var infoJSON = await link.json();
+
+                    // Assign 
                     this.imageLink = infoJSON.message;
                 } catch (err) {
                     console.error("error getting dog", err);
