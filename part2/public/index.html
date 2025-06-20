@@ -15,7 +15,7 @@
     <p>Username</p>
     <input type="text" name="uname" id="uInput" requied>
     <p>Password</p>
-    <input type="password" name="passw" required><br>
+    <input type="password" name="passw" id="pInput" required><br>
     <button type="submit">Log in</button>
     </form>
 
@@ -40,7 +40,7 @@
       },
       methods: {
         async login() {
-
+          
           await fetch('/api/users/login', {
             method: 'POST',
             headers: { 'content-type': 'application.json' },
