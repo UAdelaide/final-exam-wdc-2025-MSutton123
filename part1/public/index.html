@@ -99,11 +99,10 @@
         }).mount('#app');
 
         // Button functionality
+        var count = 0;
         function increaseNum() {
             var num2increase = document.getElementById("clickCount");
-            num2increase.innerText = num2increase.innerText;
-            count = count + 1;
-            num2increase.innerText = count;
+            num2increase.innerText = num2increase.innerText + 1;
         }
     </script>
 </body>
