@@ -12,7 +12,7 @@ router.get('/dogs', async (req, res) => {
     `);
         res.json(rows);
     } catch (error) {
-        res.status(501).send("/api/dogs request failed. " + error);
+        res.status(500).send("/api/dogs request failed. " + error);
     }
 });
 
@@ -28,7 +28,7 @@ router.get('/walkrequests/open', async (req, res) => {
     `);
         res.json(rows);
     } catch (error) {
-        res.status(501).send("/api/walkrequests/open request failed. " + error);
+        res.status(500).send("/api/walkrequests/open request failed. " + error);
     }
 });
 
