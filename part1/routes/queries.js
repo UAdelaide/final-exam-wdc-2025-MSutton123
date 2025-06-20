@@ -38,6 +38,7 @@ router.get('/walkrequests/open', async (req, res) => {
 // GET request for /api/walkers/summary
 router.get('/walkers/summary', async (req, res) => {
     // try the query to get the username, rating count, ratings average and completed requests
+    // from the database
     try {
         const [rows] = await db.query(`
         SELECT u.username AS walker_username,
@@ -53,7 +54,7 @@ router.get('/walkers/summary', async (req, res) => {
         WHERE u.role = 'walker'
         GROUP BY u.username
     `);
-        res.json(rows);
+        res.json(rows); // send through json
     } catch (error) {
         res.status(500).send("/api/walkers/summary request failed. " + error);
     }
