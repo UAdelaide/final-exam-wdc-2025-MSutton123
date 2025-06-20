@@ -8,7 +8,7 @@ router.get('/dogs', async (req, res) => {
     const [rows] = await db.query(`
         SELECT d.name AS dog_name, d.size, u.username AS owner_username
         FROM Dogs d
-        JOIN Users u ON d.owner_id = u.usr_id
+        JOIN Users u ON d.owner_id = u.user_id
     `);
     res.json(rows);
     } catch (error) {
@@ -18,6 +18,7 @@ router.get('/dogs', async (req, res) => {
 
 // GET requests for /walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
+    try {
     const [rows] = await db.query(`
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
         FROM Dogs d
