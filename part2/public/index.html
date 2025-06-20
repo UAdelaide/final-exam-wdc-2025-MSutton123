@@ -79,13 +79,14 @@
       methods: {
         async login() { // login function to be called by form
           try {
-            
+          // fetch data from post request
             const response = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'content-type': 'application/json' },
               body: JSON.stringify({ username: this.username, password: this.password })
             });
 
+            // convert the reponse to json
             const data = await response.json();
 
             if (!response.ok) {
