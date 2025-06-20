@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Dog Walking Service</title>
@@ -7,16 +8,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body class="bg-light">
 
   <div id="app" class="container py-5">
     <form>
-    <h1 class="mb-4 text-primary">{{ message }}</h1>
-    <p>Username</p>
-    <input type="text" name="uname" id="uInput" requied>
-    <p>Password</p>
-    <input type="password" name="passw" id="pInput" required><br>
-    <button type="submit">Log in</button>
+      <h1 class="mb-4 text-primary">{{ message }}</h1>
+      <p>Username</p>
+      <input type="text" name="uname" id="uInput" requied>
+      <p>Password</p>
+      <input type="password" name="passw" id="pInput" required><br>
+      <button type="submit">Log in</button>
     </form>
 
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
@@ -41,28 +43,29 @@
       methods: {
         async login() {
           try {
-          this.username = document.getElementById("uInput").value;
-          this.password = document.getElementById("pInput").value;
+            this.username = document.getElementById("uInput").value;
+            this.password = document.getElementById("pInput").value;
 
-          const response = await fetch('/api/users/login', {
-            method: 'POST',
-            headers: { 'content-type': 'application.json' },
-            body: JSON.stringify({ email: this.username, password: this.password })
-          });
+            const response = await fetch('/api/users/login', {
+              method: 'POST',
+              headers: { 'content-type': 'application.json' },
+              body: JSON.stringify({ email: this.username, password: this.password })
+            });
 
-          const data = response.json();
-        } catch (error) {
-          console.log(error);
-        }
-        }
+            const data = response.json();
+          } catch (error) {
+            console.log(error);
+          }
+        },
+        async walkerOwner() {
 
-        async walkerOwnser() {
-
-        }
+        },
+        async
       }
     }).mount('#app');
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
