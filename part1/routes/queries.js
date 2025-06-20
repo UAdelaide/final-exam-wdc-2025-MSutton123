@@ -24,8 +24,8 @@ router.get('/walkrequests/open', async (req, res) => {
     res.json(rows);
 });
 
-// GET requests for /walkrequests/open
-router.get('/walkrequests/open', async (req, res) => {
+// GET requests for /walkers/summary
+router.get('/walkers/summary', async (req, res) => {
     const [rows] = await db.query(`
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
         FROM Dogs d
