@@ -38,8 +38,8 @@ app.get('/api/dogs', async (req, res) => {
   `);
     res.json(rows);
     } catch (error) {
-        throw error(error);
-    }
+    res.
+}
 });
 
 // Export the app instead of listening here
