@@ -72,8 +72,6 @@ router.post('/logout',async (req,res) => {
         res.send("logged out");
       }
     });
-
-
 });
 
 module.exports = router;
