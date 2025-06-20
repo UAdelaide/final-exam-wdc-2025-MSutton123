@@ -10,7 +10,7 @@
 <body>
     <div id='app'>
         <h1>Dog of the Day</h1>
-        <img v-if="imageLink" src="imageLink" alt="Random dog" />
+        <img v-if="imageLink" src="{{ imageLink }}" alt="Random dog" />
     </div>
     <script>
         const { createApp } = Vue;
