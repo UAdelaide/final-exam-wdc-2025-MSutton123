@@ -12,7 +12,7 @@ router.get('/dogs', async (req, res) => {
     `);
     res.json(rows);
     } catch (error) {
-        res.status(501).send("/dogs request failed"+error);
+        res.status(501).send("/dogs request failed.\n"+error);
     }
 });
 
