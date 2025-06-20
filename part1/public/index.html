@@ -22,7 +22,8 @@
             },
             async mounted() {
                 const link = await fetch('https://dog.ceo/api/breeds/image/random');
-                this.imageLink = await link[0].json();
+                this.imageLink = await link.json();
+                
             }
         }).mount('#app');
     </script>
