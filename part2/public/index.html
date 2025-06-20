@@ -34,7 +34,7 @@
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <tr v-for="(dog, index) in dog_info" :key="dog.dog_id"> <!-- go through all values in -->
+      <tr v-for="(dog, index) in dog_info" :key="dog.dog_id"> <!-- go through all values in dog_info, using the id as the index-->
         <td>{{ dog.dog_id }}</td>
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
