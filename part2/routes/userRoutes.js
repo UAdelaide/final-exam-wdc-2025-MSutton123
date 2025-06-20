@@ -36,7 +36,7 @@ router.get('/me', (req, res) => {
 
 // POST login (fixed version)
 router.post('/login', async (req, res) => {
-  // 
+  // set query parameters
   const { username, password } = req.body;
 
   try {
