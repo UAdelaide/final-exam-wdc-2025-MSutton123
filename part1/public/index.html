@@ -23,7 +23,7 @@
             async mounted() {
                 const link = await fetch('https://dog.ceo/api/breeds/image/random');
                 this.infoJSON = await link.json();
-
+                this.imageLink = infoJSON
             }
         }).mount('#app');
     </script>
