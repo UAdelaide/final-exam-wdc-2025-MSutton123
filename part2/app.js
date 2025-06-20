@@ -31,7 +31,7 @@ app.use('/api/users', userRoutes);
 
 // GET dogs
 app.get('/api/dogs', async (req, res) => {
-    try {
+    try { // query dog id, name size and owner id from Dogs table
         const [rows] = await db.query(`
         SELECT dog_id, name, size, owner_id
         FROM Dogs
