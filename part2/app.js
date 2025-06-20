@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
+const db = require('./models/db');
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.use('/api/users', userRoutes);
 
 
 // GET alldogs
-require('express').Router().get('/api/dogs', async (req, res) => {
+express.Router().get('/api/dogs', async (req, res) => {
     const [rows] = await db.query(`
     SELECT dog_id, name, size, owner_id
     FROM Dogs
