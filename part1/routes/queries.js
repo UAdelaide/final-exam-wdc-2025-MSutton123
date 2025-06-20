@@ -29,7 +29,7 @@ router.get('/walkers/summary', async (req, res) => {
     const [rows] = await db.query(`
         SELECT u.user_id AS walker_username, COUNT(rate.rating_id) AS total_ratings
         FROM Users s
-        JOIN 
+        JOIN WalkRatings rate ON 
         WHERE u.role = 'walker'
 
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
