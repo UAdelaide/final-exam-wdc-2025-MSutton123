@@ -48,7 +48,7 @@
             for (key in this.dog_info) {
               const link = await fetch('https://dog.ceo/api/breeds/image/random');
               var infoJSON = await link.json();
-              this.imageLink = infoJSON.message;
+              this.imageLink.push(infoJSON.message);
             }
 
           } catch (err) {
