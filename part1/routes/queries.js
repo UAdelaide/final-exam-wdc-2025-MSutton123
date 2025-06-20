@@ -11,8 +11,8 @@ router.get('/dogs', async (req, res) => {
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
     `);
-        res.json(rows); // 
-    } catch (error) {
+        res.json(rows); // send through json
+    } catch (error) { // if query fails
         res.status(500).send("/api/dogs request failed. " + error);
     }
 });
