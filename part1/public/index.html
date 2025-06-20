@@ -49,10 +49,11 @@
             }
         }
 
-        #clickcount {
+        h2 {
             display: block;
             margin: auto;
             text-align: center;
+            font-size: 90px;
         }
 
         button {
@@ -70,7 +71,7 @@
             It makes me very happy to see the picture of the dog of the day.</p>
         <img v-if="imageLink" :src="imageLink" alt="Random dog" /><br>
         <button type="button" @click="">CLICK this</button>
-        <h1 id="clickCount">0</h1>
+        <h2 id="clickCount">0</h2>
     </div>
     <script>
         const { createApp } = Vue;
