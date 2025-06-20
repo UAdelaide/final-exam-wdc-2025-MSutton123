@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // make session for user
+    // make session for user using the data from the query
     var first_row = rows[0];
     req.session.user = {
                     user_id: first_row.user_id,
