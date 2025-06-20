@@ -61,9 +61,9 @@ router.post('/login', async (req, res) => {
                     role: first_row.role
                   };
 
-    //
+    // send message that login was successful and send data from the query
     res.json({ message: 'Login successful', user: rows[0] });
-  } catch (error) {
+  } catch (error) { // if
     res.status(500).json({ error: 'Login failed' });
   }
 });
