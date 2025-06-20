@@ -83,11 +83,12 @@ router.post('/logout',async (req,res) => {
 
 // GET choosedog request
 router.get('/choosedog', async (req,res) => {
+  // make a database query based on the owner id from the session
   const [rows] = await db.query(`
     SELECT name, dog_id
     FROM Dogs
     WHERE owner_id = ?`,[req.session.user.user_id]);
-    res.json(rows);
+    res.json(rows); // send through json
 });
 
 module.exports = router;
