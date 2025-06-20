@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 
-// GET requests for /api/dogs
+// GET request for /api/dogs
 router.get('/dogs', async (req, res) => {
     try {
         const [rows] = await db.query(`
@@ -16,7 +16,7 @@ router.get('/dogs', async (req, res) => {
     }
 });
 
-// GET request for /walkrequests/open
+// GET request for api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
     try {
         const [rows] = await db.query(`
