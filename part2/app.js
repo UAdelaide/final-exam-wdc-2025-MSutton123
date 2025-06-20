@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
+// Require the database
 const db = require('./models/db');
 
 const app = express();
@@ -29,7 +30,7 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 
-// GET dogs
+// GET dogs request
 app.get('/api/dogs', async (req, res) => {
     try { // query dog id, name size and owner id from Dogs table
         const [rows] = await db.query(`
