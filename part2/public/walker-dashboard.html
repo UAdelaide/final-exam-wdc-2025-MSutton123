@@ -75,15 +75,6 @@
           }
         }
 
-        async logout() {
-          window.location.href = 'index.html';
-        //   const response = await fetch('/api/users/logout', {
-        //       method: 'POST',
-        //       credentials: 'include'
-        //     });
-
-        //       window.location.href = 'index.html';
-        }
 
         onMounted(() => {
           loadWalkRequests();
@@ -95,6 +86,17 @@
           error,
           applyToWalk
         };
+      },
+      methods: {
+        async logout() {
+          window.location.href = 'index.html';
+        //   const response = await fetch('/api/users/logout', {
+        //       method: 'POST',
+        //       credentials: 'include'
+        //     });
+
+        //       window.location.href = 'index.html';
+        }
       }
     }).mount('#app');
   </script>
