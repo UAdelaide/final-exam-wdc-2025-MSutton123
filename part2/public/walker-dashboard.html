@@ -60,7 +60,8 @@
           try {
             const response = await fetch('/api/users/me');
             if (!response.ok) throw new Error(result.error || 'get current user failed');
-            
+            const data = await response.json();
+            return data.
           } catch (err) {
             error.value = err.message;
           }
