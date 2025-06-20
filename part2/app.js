@@ -17,6 +17,8 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 app.use(session({
+    secret: '',
+    resave: false,
     
 }));
 
