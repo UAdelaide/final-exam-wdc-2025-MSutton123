@@ -62,6 +62,8 @@
         async walkerOwner() {
           try {
             const response = await fetch ('api/users/me', {credentials: 'include', cache: 'no-store'});
+
+            if (response)
           } catch {
 
           }
