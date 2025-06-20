@@ -19,6 +19,7 @@ router.get('/dogs', async (req, res) => {
 
 // GET request for api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
+    // try the query to get the request id, dog name, 
     try {
         const [rows] = await db.query(`
         SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
