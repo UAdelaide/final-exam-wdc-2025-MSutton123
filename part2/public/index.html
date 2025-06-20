@@ -40,7 +40,7 @@
       },
       methods: {
         async login() {
-          const user = document.getElementById("uInput");
+          this.username = document.getElementById("uInput");
           const pass = document.getElementById("pInput");
           await fetch('/api/users/login', {
             method: 'POST',
