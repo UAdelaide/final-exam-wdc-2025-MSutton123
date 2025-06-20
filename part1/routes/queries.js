@@ -37,7 +37,7 @@ router.get('/walkrequests/open', async (req, res) => {
 
 // GET request for /api/walkers/summary
 router.get('/walkers/summary', async (req, res) => {
-    // try the query to get the 
+    // try the query to get the username, rating count, ratings average and completed requests
     try {
         const [rows] = await db.query(`
         SELECT u.username AS walker_username,
