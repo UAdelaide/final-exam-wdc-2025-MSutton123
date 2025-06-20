@@ -24,7 +24,7 @@
                 try {
                 const link = await fetch('https://dog.ceo/api/breeds/image/random');
                 console.log(link);
-                this.infoJSON = await link.json();
+                var infoJSON = await link.json();
                 this.imageLink = infoJSON.message;
                 } catch (err) {
                     console.error("error getting dog", err);
