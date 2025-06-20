@@ -119,7 +119,7 @@
                     const link = await fetch('https://dog.ceo/api/breeds/image/random');
                     var infoJSON = await link.json();
 
-                    // Assign 
+                    // assign link to 
                     this.imageLink = infoJSON.message;
                 } catch (err) {
                     console.error("error getting dog", err);
