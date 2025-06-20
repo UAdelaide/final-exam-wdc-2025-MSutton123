@@ -26,5 +26,14 @@ app.use(session({
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+// GET alldogs
+app.get('/api/dogs', async (req,res) => {
+  const [rows] = await db.query(`
+    SELECT dog_id, name, size, owner_id
+    FROM Dogs
+  `);
+  res.json(rows);
+});
+
 // Export the app instead of listening here
 module.exports = app;
