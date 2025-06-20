@@ -26,7 +26,7 @@
                 this.infoJSON = await link.json();
                 this.imageLink = infoJSON.message;
                 } catch (err) {
-                    console.error("error getting dog", )
+                    console.error("error getting dog", err);
                 }
             }
         }).mount('#app');
