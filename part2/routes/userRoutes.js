@@ -63,11 +63,11 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// GET logout
-router.get('/logout',async (req,res) => {
+// POST logout
+router.post('/logout',async (req,res) => {
     req.session.destroy((error) => {
       if (error) {
-        res.status
+        res.status(500).send(error);
       }
     });
 
