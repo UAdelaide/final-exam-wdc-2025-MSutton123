@@ -55,7 +55,7 @@ router.get('/walkers/summary', async (req, res) => {
         GROUP BY u.username
     `);
         res.json(rows); // send through json
-    } catch (error) {
+    } catch (error) { // if query fails
         res.status(500).send("/api/walkers/summary request failed. " + error);
     }
 });
