@@ -76,6 +76,8 @@ router.post('/logout',async (req,res) => {
 });
 
 // GET dogs
-router.post('/getdogs')
+router.post('/getdogs', async (req,res) =>  {
+  
+});
 
 module.exports = router;
