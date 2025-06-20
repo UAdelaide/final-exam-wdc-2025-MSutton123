@@ -77,7 +77,7 @@ router.post('/logout',async (req,res) => {
 
 // GET choosedog
 router.get('/choosedog', async (req,res) => {
-  const [rows] = db.query(`
+  const [rows] = await db.query(`
     SELECT name, dog_id
     FROM Dogs
     WHERE owner_id = ?`,[req.session.user.user_id]);
