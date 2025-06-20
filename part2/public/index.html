@@ -59,23 +59,7 @@
           } catch (error) {
             throw error;
           }
-        },
-        async walkerOwner() {
-          try {
-            const response = await fetch ('api/users/me', {credentials: 'include', cache: 'no-store'});
-
-            if (response.ok) {
-              const data = response.json();
-              link2page(data.role);
-            }
-          } catch (error) {
-            throw error;
-          }
-        },
-        async send2page() {
-
         }
-      }
     }).mount('#app');
   </script>
 
