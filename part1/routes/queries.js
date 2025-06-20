@@ -27,10 +27,11 @@ router.get('/walkrequests/open', async (req, res) => {
 // GET requests for /walkers/summary
 router.get('/walkers/summary', async (req, res) => {
     const [rows] = await db.query(`
-        SELECT u.username AS walker_username, COUNT(rate.rating_id) AS total_ratings, AVG(rate.rating) AS average_rating,
+        SELECT u.username AS walker_username, COUNT(rate.rating_id) AS total_ratings, AVG(rate.rating) AS average_rating, 
         FROM Users u
         JOIN WalkRatings rate ON u.user_id = rate.walker_id
-        WHERE u.role = 'walker' AND 
+        JOIN WalkRequests requests ON
+        WHERE u.role = 'walker' AND
     `);
     res.json(rows);
 });
