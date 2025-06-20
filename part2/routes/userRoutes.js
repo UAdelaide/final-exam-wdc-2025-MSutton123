@@ -79,8 +79,8 @@ router.post('/logout',async (req,res) => {
 router.post('/choosedog', async (req,res) => {
   const [rows] = db.query(`
     SELECT d.name
-    FROM Dogs
-    JOIN `);
+    FROM Dogs d
+    JOIN Users u ON u.user_id`);
 });
 
 module.exports = router;
