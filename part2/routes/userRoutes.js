@@ -51,6 +51,8 @@ router.post('/login', async (req, res) => {
     }
 
     // make session for user using the data from the query
+    // the first row is used as it will be most similar to the
+    // inputted data
     var first_row = rows[0];
     req.session.user = {
                     user_id: first_row.user_id,
@@ -59,6 +61,7 @@ router.post('/login', async (req, res) => {
                     role: first_row.role
                   };
 
+    //
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
