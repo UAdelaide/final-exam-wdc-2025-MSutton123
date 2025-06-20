@@ -42,6 +42,7 @@
       async mounted() {
         try {
             const response = await fetch('/api/users/alldogs');
+            const link = await fetch('https://dog.ceo/api/breeds/image/random');
             if (!response.ok) throw new Error(result.error || 'get current user failed');
             this.dog_info = await response.json();
           } catch (err) {
