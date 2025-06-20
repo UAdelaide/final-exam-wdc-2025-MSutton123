@@ -76,7 +76,7 @@ router.post('/logout',async (req,res) => {
 });
 
 // GET dogs
-router.post('/getdogs', async (req,res) =>  {
+router.post('/choosedogs', async (req,res) =>  {
   const [rows] = db.query(`
     SELECT`);
 });
