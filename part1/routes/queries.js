@@ -29,8 +29,8 @@ router.get('/walkrequests/open', async (req, res) => {
         JOIN Users u ON d.owner_id = u.user_id
         WHERE wr.status = 'open'
     `);
-        res.json(rows);
-    } catch (error) {
+        res.json(rows); // send through json
+    } catch (error) { // if query fails
         res.status(500).send("/api/walkrequests/open request failed. " + error);
     }
 });
