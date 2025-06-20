@@ -76,7 +76,7 @@ router.post('/logout',async (req,res) => {
         res.status(500).send('error logging out');
       } else {
         res.clearCookie('connect.sid'); // clear related cookies
-        res.json({ message: "logged out" });
+        res.json({ message: "logged out" }); // send message of successful logout
       }
     });
 });
