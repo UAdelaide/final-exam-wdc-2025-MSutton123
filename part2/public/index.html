@@ -60,6 +60,7 @@
       },
       async mounted() {
         try {
+            // fetch data from the dogs request
             const response = await fetch('/api/dogs'); // fetch data from /api/dogs
             if (!response.ok) throw new Error(result.error || 'get current user failed'); // if error occurs
             this.dog_info = await response.json(); // await json
