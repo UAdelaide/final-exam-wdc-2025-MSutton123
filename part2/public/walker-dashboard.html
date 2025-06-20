@@ -100,7 +100,7 @@
         };
       },
       methods: {
-        async logout() {
+        async logout() { // add logout method
           try {
           const response = await fetch('/api/users/logout', {
               method: 'POST',
