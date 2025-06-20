@@ -71,11 +71,14 @@
               // fetch a link
               const link = await fetch('https://dog.ceo/api/breeds/image/random');
               var infoJSON = await link.json();
+
+              // append link to array
               links.push(infoJSON.message);
             }
+            // 
             this.imageLinks = links;
 
-          } catch (err) {
+          } catch (err) { // if error occurs
             error.value = err.message;
           }
       },
