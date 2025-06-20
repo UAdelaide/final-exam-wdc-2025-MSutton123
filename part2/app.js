@@ -29,7 +29,7 @@ app.use('/api/users', userRoutes);
 
 
 // GET alldogs
-express.Router().get('/api/dogs', async (req, res) => {
+app.get('/api/dogs', async (req, res) => {
     const [rows] = await db.query(`
     SELECT dog_id, name, size, owner_id
     FROM Dogs
